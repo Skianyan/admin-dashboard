@@ -1,0 +1,140 @@
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+	font: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+	font: bold;
+}
+:root {
+	--blue: rgb(58, 146, 205);
+	--grey: rgb(216, 219, 228);
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Roboto";
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: 1fr 5fr;
+}
+.sidebar {
+	background-color: var(--blue);
+	grid-area: 1 /1/ 3/ 2;
+	list-style: none;
+}
+.sidebar > div {
+	font-weight: 500;
+	font-size: larger;
+	color: aliceblue;
+	display: grid;
+	margin: 20px;
+	gap: 40px;
+	grid-auto-rows: auto;
+}
+.sidebar > div > ul > li {
+	list-style: none;
+	margin: 15px;
+}
+.sidebar li {
+	display: grid;
+	grid-template-columns: 40px auto;
+	align-items: center;
+}
+.sidebar li img {
+	height: 25px;
+	fill: #f6f6f6;
+}
+.head {
+	background-color: #f6f6f6;
+	grid-area: 1 /2/ 2/ 3;
+	display: grid;
+	gap: 10px;
+	grid-template: 3fr 5fr / 3fr 2fr;
+	align-items: center;
+	padding: 10px 3vw;
+}
+
+.search {
+	display: grid;
+	grid-template-columns: 1fr 20fr;
+	place-items: center;
+	gap: 5px;
+}
+.search > img {
+	height: 25px;
+}
+.search > div {
+	background-color: var(--grey);
+	width: 100%;
+	height: 25px;
+	border-radius: 20px;
+}
+.profile {
+	justify-self: end;
+	display: grid;
+	place-items: center;
+	gap: 15px;
+	padding: 0px 15px;
+	grid-template-columns: 50px 70px auto;
+}
+.profile > img:nth-child(1) {
+	height: 25px;
+	place-self: center;
+}
+.profile > img:nth-child(2) {
+	height: 40px;
+	border-radius: 100%;
+	place-self: center;
+}
+.welcome {
+	display: grid;
+	grid-template-columns: 60px auto;
+	grid-template-rows: 25px 25px;
+	gap: 5px;
+	padding: 10px;
+}
+.welcome > img {
+	height: 60px;
+	border-radius: 100%;
+	grid-area: 1 / 1 / 3 / 2;
+	place-self: center;
+}
+.welcome > p:nth-child(2) {
+	font-weight: 500;
+	font-size: small;
+	align-self: self-end;
+	padding-left: 20px;
+}
+.welcome > p:nth-child(3) {
+	font-weight: 500;
+	font-size: larger;
+	align-self: self-start;
+	padding-left: 20px;
+}
+.posting {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 2vw;
+}
+.posting > button {
+	background-color: var(--blue);
+	color: aliceblue;
+	font-weight: bold;
+	height: 40px;
+	border-radius: 30px;
+	border-style: none;
+}
+.content {
+	background-color: var(--grey);
+	grid-area: 2 /2/ 3/ 3;
+	display: grid;
+	grid-template: 1fr 1fr/ 5fr 2fr;
+	padding: 20px;
+}
